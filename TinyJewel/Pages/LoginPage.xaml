@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TinyJewel.Pages.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    NavigationPage.HasNavigationBar="False"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Entry
+                Grid.Row="0"
+                Grid.ColumnSpan="2"
+                Placeholder="Enter the Username"
+                Text="{Binding UserName}" />
+            <Entry
+                Grid.Row="1"
+                Grid.ColumnSpan="2"
+                IsPassword="True"
+                Placeholder="Enter the Password"
+                Text="{Binding Password}" />
+
+            <BoxView BackgroundColor="Transparent" Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+            <Button
+                Grid.Row="3"
+                Grid.Column="0"
+                BorderColor="SlateGray"
+                BorderWidth="1"
+                Command="{Binding CancelButtonCommand}"
+                Text="{Binding CancelButtonText}" />
+            <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                BackgroundColor="CadetBlue"
+                Command="{Binding LoginButtonCommand}"
+                Text="Login" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
